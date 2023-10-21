@@ -19,7 +19,10 @@ let NetworkKitTargets: [Target] = [
         deploymentTarget: .iOS(targetVersion: "16.0", devices: [.iphone]),
         infoPlist: .extendingDefault(with: netwrokKitInfoPlist),
         sources: ["Sources/**"],
-        resources: ["Resources/**"]
+        resources: ["Resources/**"],
+        dependencies: [
+            .project(target: "YoonKit", path: .relativeToRoot("Projects/YoonKit"))
+        ]
     )]
 
 let NetworkKit = Project.init(

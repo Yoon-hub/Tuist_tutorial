@@ -21,7 +21,9 @@ let appTargets: [Target] = [
         sources: ["Sources/**"],
         resources: ["Resources/**"],
         dependencies: [
-            .project(target: "NetworkKit", path: "../NetworkKit")
+            .project(target: "NetworkKit", path: .relativeToRoot("Projects/NetworkKit")),
+            .project(target: "YoonKit", path: .relativeToRoot("Projects/YoonKit")),
+            .external(name: "Alamofire")
         ]
     )]
 
